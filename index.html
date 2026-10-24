@@ -1,11 +1,19 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Blog
+---
 
-<html>
+<h1>{{ site.title }}</h1>
+<p>{{ site.description }}</p>
 
-<body>
-
-<h2>What Can JavaScript Do?</h2>
-
-<p id="demo">JavaScript can change HTML content.</p>
-
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button> 
+{% if site.posts.size > 0 %}
+	{% for post in site.posts %}
+		<article>
+			<h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+			<p><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></p>
+			{{ post.excerpt }}
+		</article>
+	{% endfor %}
+{% else %}
+	<p>No posts yet.</p>
+{% endif %}
