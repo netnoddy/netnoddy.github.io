@@ -1,20 +1,16 @@
 ---
 layout: default
-title: Blog
+title: Home
 ---
-
-<h1>{{ site.title }}</h1>
-<p>{{ site.description }}</p>
 
 {% assign posts = site.pages | where_exp: "p", "p.ext == '.md'" | sort: "date" | reverse %}
 {% if posts.size > 0 %}
 	{% for post in posts %}
-		<article>
+		<article class="post-list-item">
 			<h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-			{% if post.date %}<p><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></p>{% endif %}
+			{% if post.date %}<p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></p>{% endif %}
 			{{ post.content | markdownify }}
 		</article>
-		<hr>
 	{% endfor %}
 {% else %}
 	<p>No posts yet.</p>
