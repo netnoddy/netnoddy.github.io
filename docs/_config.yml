@@ -6,6 +6,6 @@ plugins:
 markdown: kramdown
 defaults:
   - scope:
-      path: "blog"
+      path: ""
     values:
       layout: default

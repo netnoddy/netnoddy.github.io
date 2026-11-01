@@ -6,7 +6,7 @@ title: Blog
 <h1>{{ site.title }}</h1>
 <p>{{ site.description }}</p>
 
-{% assign posts = site.pages | where_exp: "p", "p.path contains 'blog/'" | where_exp: "p", "p.ext == '.md'" | sort: "date" | reverse %}
+{% assign posts = site.pages | where_exp: "p", "p.ext == '.md'" | sort: "date" | reverse %}
 {% if posts.size > 0 %}
 	{% for post in posts %}
 		<article>

@@ -1,12 +1,12 @@
 # Netnoddy's Blog
 
-This blog is built with Jekyll and GitHub Pages. Write each post as a Markdown file in `blog/`; pushing it to the `main` branch automatically rebuilds and publishes the site.
+This blog is built with Jekyll and GitHub Pages. Write each post as a Markdown file in `docs/`; pushing it to the `main` branch automatically rebuilds and publishes the site.
 
-In the repository's **Settings > Pages**, set the publishing source to the `main` branch and `/(root)` if it is not already configured.
+In the repository's **Settings > Pages**, set the publishing source to the `main` branch and `/docs` if it is not already configured.
 
 ## Write a post
 
-Create a file in `blog/`, for example `blog/my-post.md`:
+Create a file in `docs/`, for example `docs/my-post.md`:
 
 ```markdown
 ---
